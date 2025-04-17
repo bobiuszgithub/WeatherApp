@@ -1,18 +1,24 @@
 //
-//  WeatherModel.swift
-//  WeatherApp
+//  weatherModel.swift
+//  SimpleWeather
 //
 //  Created by Bence Családi on 2025. 04. 17..
 //
 
-import SwiftUI
 
-struct WeatherModel: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
+import Foundation
+
+struct WeatherResponse: Codable {
+    let main: Main
+    let weather: [Weather]
+    let dt: TimeInterval
 }
 
-#Preview {
-    WeatherModel()
+struct Main: Codable {
+    let temp_min: Double
+    let temp_max: Double
+}
+
+struct Weather: Codable {
+    let main: String
 }
